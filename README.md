@@ -3,6 +3,7 @@
 A full-stack event management platform for booking and managing events (weddings, birthdays, corporate functions). It pairs a premium, animated static frontend with a Laravel admin backend.
 
 🔗 **Live demo (frontend):** https://eventyx-event-management.netlify.app
+🔐 **Admin panel:** `http://localhost:8000/admin/login` *(runs locally — the Laravel backend is not deployed; see [Backend setup](#backend-laravel))*
 
 > Tech stack: **Laravel 12 (PHP 8.2+)** · **MySQL** · **HTML5 / CSS3 / JavaScript**
 > Approach: frontend design first → then Laravel backend.
@@ -54,6 +55,7 @@ Event Management System/
 ### Frontend (static)
 The frontend is plain HTML/CSS/JS — just open `frontend/index.html` in a browser, or serve the folder with any static server.
 
+<a id="backend-laravel"></a>
 ### Backend (Laravel)
 
 Requirements: PHP 8.2+, Composer, MySQL.
