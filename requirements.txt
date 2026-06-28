@@ -1,0 +1,294 @@
+================================================================================
+EVENT MANAGEMENT SYSTEM – REQUIREMENTS DOCUMENT
+================================================================================
+
+Project Name : Event Management System
+Last Updated : 2026-06-24
+
+--------------------------------------------------------------------------------
+TECHNOLOGIES
+--------------------------------------------------------------------------------
+Frontend     : HTML5, CSS3, JavaScript
+Backend      : PHP, Laravel
+Database     : MySQL
+Admin Panel  : Laravel Admin Dashboard
+
+================================================================================
+1. PROJECT OVERVIEW
+================================================================================
+The Event Management System allows customers to browse event services, view
+packages, submit inquiries, and book events online.
+
+Supported event categories:
+  - Wedding Events
+  - Birthday Parties
+  - Corporate Events
+
+Administrators can manage bookings, event packages, customer inquiries,
+galleries, and website content through a secure admin panel.
+
+================================================================================
+2. USER ROLES
+================================================================================
+Customer / User
+  - View event services
+  - Browse event packages
+  - Submit inquiries
+  - Book events
+  - View gallery
+  - Contact event organizers
+
+Admin
+  - Manage event categories
+  - Manage packages
+  - Manage bookings
+  - Manage gallery
+  - Manage inquiries
+  - Manage testimonials
+  - Manage website content
+  - View reports
+
+================================================================================
+3. FRONTEND WEBSITE PAGES
+================================================================================
+3.1 Home Page
+    Sections:
+      - Hero Banner
+      - About Company
+      - Event Categories
+      - Why Choose Us
+      - Featured Packages
+      - Gallery Preview
+      - Testimonials
+      - Contact Information
+      - Footer
+
+3.2 About Us Page
+    Content:
+      - Company Introduction
+      - Mission
+      - Vision
+      - Team Information
+
+3.3 Services Page
+    Wedding Events
+      - Venue Decoration
+      - Catering Services
+      - Photography & Videography
+      - Entertainment
+      - Wedding Planning
+    Birthday Parties
+      - Theme Decorations
+      - Cake Arrangements
+      - Catering Services
+      - Photography
+      - Entertainment Activities
+    Corporate Events
+      - Conferences
+      - Product Launches
+      - Seminars
+      - Team Building Events
+      - Corporate Gatherings
+
+3.4 Packages Page
+    Package Details:
+      - Package Name
+      - Package Description
+      - Package Price
+      - Included Services
+      - Event Type
+      - Book Now Button
+
+3.5 Gallery Page
+    Features:
+      - Event Photos
+      - Event Videos
+      - Category Filter
+
+3.6 Testimonials Page
+    Features:
+      - Customer Reviews
+      - Ratings
+      - Event Type
+
+3.7 Contact Page
+    Contact Form Fields:
+      - Name
+      - Email
+      - Phone Number
+      - Event Type
+      - Message
+
+3.8 Book Event Page
+    Booking Form Fields:
+      - Customer Name
+      - Email
+      - Phone Number
+      - Event Type
+      - Event Date
+      - Number of Guests
+      - Package Selection
+      - Event Location
+      - Additional Requirements
+
+================================================================================
+4. ADMIN PANEL MODULES
+================================================================================
+Dashboard
+    Statistics:
+      - Total Bookings
+      - Total Packages
+      - Total Inquiries
+      - Total Customers
+
+Event Categories Management
+    Functions: Add / Edit / Delete / View Category
+    Categories: Wedding Events, Birthday Parties, Corporate Events
+
+Package Management
+    Functions: Add / Edit / Delete / View Package
+    Fields:
+      - Package Name
+      - Event Category
+      - Price
+      - Description
+      - Image
+
+Booking Management
+    Functions: View Bookings / Update Booking Status / Delete Booking
+    Booking Status: Pending, Confirmed, Completed, Cancelled
+
+Inquiry Management
+    Functions: View Inquiry / Reply Inquiry / Delete Inquiry
+
+Gallery Management
+    Functions: Upload Images / Upload Videos / Edit Media / Delete Media
+
+Testimonials Management
+    Functions: Add / Edit / Delete Testimonial
+
+User Management
+    Functions: Admin Login / Change Password / Manage Users
+
+================================================================================
+5. DATABASE TABLES
+================================================================================
+users
+    - id
+    - name
+    - email
+    - password
+    - role
+
+categories
+    - id
+    - category_name
+    - description
+
+packages
+    - id
+    - category_id   (FK -> categories.id)
+    - package_name
+    - price
+    - description
+    - image
+
+bookings
+    - id
+    - customer_name
+    - email
+    - phone
+    - event_type
+    - package_id     (FK -> packages.id)
+    - event_date
+    - guests
+    - location
+    - requirements
+    - status
+
+inquiries
+    - id
+    - name
+    - email
+    - phone
+    - message
+
+gallery
+    - id
+    - category_id    (FK -> categories.id)
+    - image
+    - video
+
+testimonials
+    - id
+    - customer_name
+    - review
+    - rating
+
+================================================================================
+6. ADDITIONAL FEATURES
+================================================================================
+  - Responsive Design
+  - Mobile Friendly Layout
+  - SEO Friendly Pages
+  - Contact Form Validation
+  - Image Upload Management
+  - Secure Admin Authentication
+  - Search & Filter Functionality
+  - Laravel MVC Architecture
+  - CRUD Operations for All Modules
+
+================================================================================
+7. DEVELOPMENT PLAN (ESTIMATED: 2–3 WEEKS)
+================================================================================
+Phase 1 — Setup & Foundation (Days 1–3)
+  - Install Laravel, configure .env and MySQL connection
+  - Set up Git repository and project structure
+  - Create database migrations: users, categories, packages,
+    bookings, inquiries, gallery, testimonials
+  - Define Eloquent models and relationships
+  - Seed initial categories (Wedding, Birthday, Corporate)
+
+Phase 2 — Authentication & Admin Foundation (Days 4–5)
+  - Implement Laravel authentication (login/logout)
+  - Add role-based access (admin vs customer)
+  - Build admin dashboard layout with statistics
+
+Phase 3 — Admin CRUD Modules (Days 6–10)
+  - Categories management (CRUD)
+  - Packages management (CRUD + image upload)
+  - Bookings management (view, status update, delete)
+  - Inquiries management (view, reply, delete)
+  - Gallery management (image/video upload, edit, delete)
+  - Testimonials management (CRUD)
+  - User management (manage users, change password)
+
+Phase 4 — Frontend Public Pages (Days 11–15)
+  - Home, About Us, Services pages
+  - Packages page (dynamic from DB) with Book Now
+  - Gallery page with category filter
+  - Testimonials page
+  - Contact page with form validation
+  - Book Event page (booking form -> bookings table)
+
+Phase 5 — Features, Polish & Testing (Days 16–18)
+  - Responsive / mobile-friendly styling
+  - SEO meta tags and friendly URLs
+  - Search & filter functionality
+  - Form validation (client + server side)
+  - Cross-browser and device testing
+  - Bug fixes and final review
+
+Phase 6 — Deployment (Days 19–21)
+  - Production environment configuration
+  - Database migration to production
+  - Final QA and handover
+
+================================================================================
+TARGET USERS
+================================================================================
+  - Event Management Companies
+  - Wedding Planners
+  - Birthday Organizers
+  - Corporate Event Agencies
+================================================================================

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packages — Eventyx</title>
+  <meta name="description" content="Explore Eventyx event packages for weddings, birthdays, and corporate events. Transparent pricing, customizable options." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .filter-tabs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
+    .filter-tab { font-family:var(--font-head); font-weight:600; font-size:.92rem; padding:11px 22px; border-radius:var(--radius-pill); background:#fff; border:1.5px solid var(--line); color:var(--ink); transition:.3s; }
+    .filter-tab:hover { border-color:var(--grad-1); color:var(--grad-1); }
+    .filter-tab.active { background:var(--gradient); color:#fff; border-color:transparent; box-shadow:var(--shadow-sm); }
+    .pkg.hide { display:none; }
+  </style>
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="logo"><span class="logo__mark"><i data-lucide="sparkles"></i></span> Eventyx</a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="packages.html" class="active">Packages</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="btn btn--primary" style="margin-top:10px;">Book Now</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="book.html" class="btn btn--primary"><i data-lucide="calendar-check"></i> Book Now</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <div class="container" data-reveal>
+      <span class="eyebrow">Our Packages</span>
+      <h1 style="margin-top:14px;">Packages For Every <span class="text-grad">Celebration</span></h1>
+      <p>Transparent pricing, premium service. Pick a package or contact us for a fully custom quote.</p>
+      <div class="crumbs"><a href="index.html">Home</a><i data-lucide="chevron-right" style="width:16px;height:16px;color:var(--muted);"></i><span>Packages</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-tabs" data-reveal>
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="wedding">Wedding</button>
+        <button class="filter-tab" data-filter="birthday">Birthday</button>
+        <button class="filter-tab" data-filter="corporate">Corporate</button>
+      </div>
+
+      <div class="grid grid--3" id="pkgGrid">
+        <!-- Wedding -->
+        <article class="pkg" data-category="wedding" data-reveal>
+          <div class="pkg__media"><img src="assets/images/photo-1464366400600.jpg" alt="Royal Wedding" /><span class="pkg__tag">Wedding</span></div>
+          <div class="pkg__body">
+            <h3>Royal Wedding</h3>
+            <div class="pkg__price">Rs 4,999 <span>/ event</span></div>
+            <ul class="pkg__list"><li><i data-lucide="check"></i> Premium venue décor</li><li><i data-lucide="check"></i> Catering for 300 guests</li><li><i data-lucide="check"></i> Photo & videography</li><li><i data-lucide="check"></i> Live entertainment</li></ul>
+            <a href="book.html" class="btn btn--ghost">Book Now</a>
+          </div>
+        </article>
+        <article class="pkg" data-category="wedding" data-reveal data-delay="1">
+          <div class="pkg__media"><img src="assets/images/photo-1606800052052.jpg" alt="Classic Wedding" /><span class="pkg__tag">Wedding</span></div>
+          <div class="pkg__body">
+            <h3>Classic Wedding</h3>
+            <div class="pkg__price">Rs 2,999 <span>/ event</span></div>
+            <ul class="pkg__list"><li><i data-lucide="check"></i> Elegant venue décor</li><li><i data-lucide="check"></i> Catering for 150 guests</li><li><i data-lucide="check"></i> Photography</li><li><i data-lucide="check"></i> Wedding coordination</li></ul>
+            <a href="book.html" class="btn btn--ghost">Book Now</a>
+          </div>
+        </article>
+
+        <!-- Birthday -->
+        <article class="pkg featured" data-category="birthday" data-reveal data-delay="2">
+          <div class="pkg__media"><img src="assets/images/photo-1492684223066.jpg" alt="Ultimate Birthday Bash" /><span class="pkg__tag">Birthday</span><span class="pkg__badge">★ Popular</span></div>
+          <div class="pkg__body">
+            <h3>Ultimate Birthday Bash</h3>
+            <div class="pkg__price">Rs 1,499 <span>/ event</span></div>
+            <ul class="pkg__list"><li><i data-lucide="check"></i> Custom theme décor</li><li><i data-lucide="check"></i> Cake & catering</li><li><i data-lucide="check"></i> Entertainment & DJ</li><li><i data-lucide="check"></i> Photography</li></ul>
+            <a href="book.html" class="btn btn--primary">Book Now</a>
+          </div>
+        </article>
+        <article class="pkg" data-category="birthday" data-reveal>
+          <div class="pkg__media"><img src="assets/images/photo-1464349095431.jpg" alt="Kids Party" /><span class="pkg__tag">Birthday</span></div>
+          <div class="pkg__body">
+            <h3>Kids Party Fun</h3>
+            <div class="pkg__price">Rs 799 <span>/ event</span></div>
+            <ul class="pkg__list"><li><i data-lucide="check"></i> Fun theme décor</li><li><i data-lucide="check"></i> Cake & snacks</li><li><i data-lucide="check"></i> Games & activities</li><li><i data-lucide="check"></i> Mascot & host</li></ul>
+            <a href="book.html" class="btn btn--ghost">Book Now</a>
+          </div>
+        </article>
+
+        <!-- Corporate -->
+        <article class="pkg" data-category="corporate" data-reveal data-delay="1">
+          <div class="pkg__media"><img src="assets/images/photo-1540575467063.jpg" alt="Corporate Pro" /><span class="pkg__tag">Corporate</span></div>
+          <div class="pkg__body">
+            <h3>Corporate Pro</h3>
+            <div class="pkg__price">Rs 3,299 <span>/ event</span></div>
+            <ul class="pkg__list"><li><i data-lucide="check"></i> Conference setup & AV</li><li><i data-lucide="check"></i> Branding & stage design</li><li><i data-lucide="check"></i> Catering & hospitality</li><li><i data-lucide="check"></i> Event coordination</li></ul>
+            <a href="book.html" class="btn btn--ghost">Book Now</a>
+          </div>
+        </article>
+        <article class="pkg" data-category="corporate" data-reveal data-delay="2">
+          <div class="pkg__media"><img src="assets/images/photo-1511578314322.jpg" alt="Seminar Starter" /><span class="pkg__tag">Corporate</span></div>
+          <div class="pkg__body">
+            <h3>Seminar Starter</h3>
+            <div class="pkg__price">Rs 1,799 <span>/ event</span></div>
+            <ul class="pkg__list"><li><i data-lucide="check"></i> Seminar hall setup</li><li><i data-lucide="check"></i> Projector & sound</li><li><i data-lucide="check"></i> Refreshments</li><li><i data-lucide="check"></i> Registration desk</li></ul>
+            <a href="book.html" class="btn btn--ghost">Book Now</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CUSTOM QUOTE ===== -->
+  <section class="section section--alt">
+    <div class="container">
+      <div data-reveal style="text-align:center;max-width:640px;margin:0 auto;">
+        <span class="eyebrow">Need Something Custom?</span>
+        <h2 style="margin:16px 0 14px;">Build Your <span class="text-grad">Own Package</span></h2>
+        <p style="margin-bottom:28px;">Every event is unique. Tell us what you're dreaming of and we'll craft a tailored package and quote just for you.</p>
+        <a href="contact.html" class="btn btn--primary"><i data-lucide="message-square"></i> Request Custom Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="index.html" class="logo" style="color:#fff;"><span class="logo__mark"><i data-lucide="sparkles"></i></span> Eventyx</a>
+          <p>Premium event management for weddings, birthdays, and corporate events. We craft experiences that last a lifetime.</p>
+          <div class="footer__social"><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23a3.7 3.7 0 0 1-.9 1.38 3.7 3.7 0 0 1-1.38.9c-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-.97.04-1.5.21-1.85.34-.46.18-.8.4-1.15.74-.34.35-.56.69-.74 1.15-.13.35-.3.88-.34 1.85-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.04.97.21 1.5.34 1.85.18.46.4.8.74 1.15.35.34.69.56 1.15.74.35.13.88.3 1.85.34 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c.97-.04 1.5-.21 1.85-.34.46-.18.8-.4 1.15-.74.34-.35.56-.69.74-1.15.13-.35.3-.88.34-1.85.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.04-.97-.21-1.5-.34-1.85a3.1 3.1 0 0 0-.74-1.15 3.1 3.1 0 0 0-1.15-.74c-.35-.13-.88-.3-1.85-.34-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.46 5.46 0 1 1 0 10.92 5.46 5.46 0 0 1 0-10.92zm0 1.62a3.84 3.84 0 1 0 0 7.68 3.84 3.84 0 0 0 0-7.68zm5.65-2.88a1.28 1.28 0 1 1 0 2.56 1.28 1.28 0 0 1 0-2.56z"/></svg></a><a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817-5.967 6.817H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/></svg></a><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.34c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21H9V9z"/></svg></a></div>
+        </div>
+        <div class="footer__links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Services</a><a href="packages.html">Packages</a></div>
+        <div class="footer__links"><h4>Company</h4><a href="gallery.html">Gallery</a><a href="testimonials.html">Reviews</a><a href="contact.html">Contact</a><a href="book.html">Book Event</a></div>
+        <div>
+          <h4>Get In Touch</h4>
+          <ul class="footer__contact"><li><i data-lucide="map-pin"></i> 123 Celebration Ave, Event City, EC 10001</li><li><i data-lucide="phone"></i> +1 (555) 123-4567</li><li><i data-lucide="mail"></i> hello@eventyx.com</li></ul>
+          <form class="footer__newsletter" onsubmit="return false;"><input type="email" placeholder="Your email" aria-label="Email" /><button type="submit" aria-label="Subscribe"><i data-lucide="send"></i></button></form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span data-year>2026</span> Eventyx. All rights reserved.</span>
+        <span>Made with <i data-lucide="heart" style="width:14px;height:14px;display:inline;color:#E0A82E;vertical-align:middle;"></i> for unforgettable moments.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Package category filter
+    const tabs = document.querySelectorAll(".filter-tab");
+    const pkgs = document.querySelectorAll("#pkgGrid .pkg");
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        const f = tab.dataset.filter;
+        pkgs.forEach((p) => {
+          const show = f === "all" || p.dataset.category === f;
+          p.classList.toggle("hide", !show);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

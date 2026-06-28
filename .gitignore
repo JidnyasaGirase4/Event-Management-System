@@ -1,0 +1,35 @@
+# Dependencies
+/backend/vendor/
+node_modules/
+**/node_modules/
+
+# Environment files (secrets)
+.env
+.env.*
+!.env.example
+backend/.env
+
+# Laravel
+/backend/public/storage
+/backend/storage/*.key
+/backend/storage/framework/cache/*
+/backend/storage/framework/sessions/*
+/backend/storage/framework/views/*
+/backend/storage/logs/*
+/backend/bootstrap/cache/*
+
+# Build output
+/frontend/dist
+/backend/public/build
+dist/
+
+# Netlify
+.netlify/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
