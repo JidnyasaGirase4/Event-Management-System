@@ -99,6 +99,14 @@ Notes:
 
 ---
 
+## 👤 Author
+
+**Jidnyasa Girase**
+🔗 LinkedIn: https://www.linkedin.com/in/jidnyasa-girase-b54693170/
+💻 GitHub: https://github.com/JidnyasaGirase4
+
+---
+
 ## 📄 License
 
 This project is provided for educational and portfolio purposes.
