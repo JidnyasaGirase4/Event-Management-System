@@ -3,7 +3,8 @@
 A full-stack event management platform for booking and managing events (weddings, birthdays, corporate functions). It pairs a premium, animated static frontend with a Laravel admin backend.
 
 🔗 **Live demo (frontend):** https://eventyx-event-management.netlify.app
-🔐 **Admin panel:** `http://localhost:8000/admin/login` *(runs locally — the Laravel backend is not deployed; see [Backend setup](#backend-laravel))*
+🔐 **Admin panel:** https://eventyx-admin.onrender.com/admin/login *(once deployed to Render — see [Deploy the admin panel](#deploy-the-admin-panel-render))*
+&nbsp;&nbsp;&nbsp;&nbsp;Default login: `admin@gmail.com` / `password`
 
 > Tech stack: **Laravel 12 (PHP 8.2+)** · **MySQL** · **HTML5 / CSS3 / JavaScript**
 > Approach: frontend design first → then Laravel backend.
@@ -79,7 +80,23 @@ The app will be available at `http://localhost:8000` and the admin panel at `/ad
 ## 🌐 Deployment
 
 - **Frontend** is deployed to **Netlify** from the `frontend/` directory: https://eventyx-event-management.netlify.app
-- **Backend** (Laravel) requires a PHP host (e.g. shared hosting, Render, Railway, or a VPS) with a MySQL database. Netlify does not run PHP.
+- **Backend** (Laravel) requires a PHP host. Netlify does **not** run PHP, so the admin panel is deployed to **Render** instead (see below).
+
+<a id="deploy-the-admin-panel-render"></a>
+### Deploy the admin panel (Render)
+
+This repo includes a `Dockerfile` and a `render.yaml` blueprint that provision the Laravel app **and** a free PostgreSQL database automatically.
+
+1. Go to **https://render.com** and sign in with GitHub.
+2. Click **New ▸ Blueprint**, then select the `Event-Management-System` repo.
+3. Render reads `render.yaml`, creates the `eventyx-admin` web service + `eventyx-db` database. Click **Apply**.
+4. Wait for the build (~3–5 min). Your admin panel will be live at:
+   **`https://eventyx-admin.onrender.com/admin/login`**
+   Login with `admin@gmail.com` / `password`.
+
+Notes:
+- The free Render tier sleeps after ~15 min idle, so the first request after a pause is slow.
+- `APP_KEY` is auto-generated on each boot. For stable login sessions, set a permanent `APP_KEY` env var in the Render dashboard (run `php artisan key:generate --show` locally to get one).
 
 ---
 

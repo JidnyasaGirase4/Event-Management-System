@@ -1,0 +1,56 @@
+# Render Blueprint — deploys the Eventyx Laravel admin panel + a free PostgreSQL DB.
+# Deploy: https://render.com  ->  New  ->  Blueprint  ->  pick this repo.
+
+databases:
+  - name: eventyx-db
+    plan: free
+    databaseName: eventyx
+    user: eventyx
+
+services:
+  - type: web
+    name: eventyx-admin
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /admin/login
+    envVars:
+      - key: APP_NAME
+        value: Eventyx
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        sync: false          # leave blank for auto-generated, or paste a base64: key for stable sessions
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: eventyx-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: eventyx-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: eventyx-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: eventyx-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: eventyx-db
+          property: password
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database

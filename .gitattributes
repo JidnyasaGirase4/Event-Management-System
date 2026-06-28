@@ -1,0 +1,4 @@
+# Keep shell scripts and Docker files LF so they run inside Linux containers
+*.sh text eol=lf
+docker/render-entrypoint.sh text eol=lf
+Dockerfile text eol=lf
