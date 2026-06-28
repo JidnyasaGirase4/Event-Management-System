@@ -4,7 +4,6 @@ A full-stack event management platform for booking and managing events (weddings
 
 🔗 **Live demo (frontend):** https://eventyx-event-management.netlify.app
 🔐 **Admin panel:** https://eventyx-admin.onrender.com/admin/login *(once deployed to Render — see [Deploy the admin panel](#deploy-the-admin-panel-render))*
-&nbsp;&nbsp;&nbsp;&nbsp;Default login: `admin@gmail.com` / `password`
 
 > Tech stack: **Laravel 12 (PHP 8.2+)** · **MySQL** · **HTML5 / CSS3 / JavaScript**
 > Approach: frontend design first → then Laravel backend.
@@ -92,7 +91,7 @@ This repo includes a `Dockerfile` and a `render.yaml` blueprint that provision t
 3. Render reads `render.yaml`, creates the `eventyx-admin` web service + `eventyx-db` database. Click **Apply**.
 4. Wait for the build (~3–5 min). Your admin panel will be live at:
    **`https://eventyx-admin.onrender.com/admin/login`**
-   Login with `admin@gmail.com` / `password`.
+   Sign in with the admin credentials created by the database seeder.
 
 Notes:
 - The free Render tier sleeps after ~15 min idle, so the first request after a pause is slow.
